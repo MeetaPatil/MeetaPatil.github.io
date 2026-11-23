@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meeta Patil | Portfolio</title>
+<meta name="description" content="Meeta Patil, B.Tech Electronics and Computer Engineering student in Mumbai. Full-stack web and IoT projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+html{scroll-behavior:smooth}
+h1,h2,h3,h4,p,ul{margin:0}
+ul{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+a{color:inherit}
+a:focus-visible{outline:3px solid #1E9BD7;outline-offset:3px}
+
+/* HERO: pinned stage. Static by default; scroll-driven only when supported and motion is allowed. */
+.mp-track{position:relative}
+.mp-stage{position:relative;height:720px;background:radial-gradient(circle at 50% 46%,#DFF1FB 0%,#FFFFFF 68%);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+.mp-radar{position:relative;width:640px;max-width:92%;aspect-ratio:1/1}
+.mp-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(30,155,215,0) 0deg 290deg,rgba(30,155,215,0.4) 360deg);animation:mp-spin 6s linear infinite}
+@keyframes mp-spin{to{transform:rotate(360deg)}}
+.mp-dots circle{fill:#1E9BD7;opacity:0.14;animation:mp-ping 6s linear infinite}
+.mp-dots .g1 circle{animation-delay:0.33s}
+.mp-dots .g2 circle{animation-delay:1.25s}
+.mp-dots .g3 circle{animation-delay:1.83s}
+.mp-dots .g4 circle{animation-delay:2.67s}
+.mp-dots .g5 circle{animation-delay:3.42s}
+.mp-dots .g6 circle{animation-delay:4.17s}
+.mp-dots .g7 circle{animation-delay:5s}
+.mp-dots .g8 circle{animation-delay:5.67s}
+@keyframes mp-ping{0%{opacity:1}60%{opacity:0.14}100%{opacity:0.14}}
+.mp-name{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.mp-tag{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;padding:0 24px}
+
+@keyframes mp-name-out{0%{opacity:1;transform:scale(1);filter:blur(0)}40%{opacity:1;transform:scale(1);filter:blur(0)}65%{opacity:0;transform:scale(1.08);filter:blur(8px)}100%{opacity:0;transform:scale(1.08);filter:blur(8px)}}
+@keyframes mp-tag-in{0%{opacity:0;transform:translateY(28px)}45%{opacity:0;transform:translateY(28px)}70%{opacity:1;transform:none}100%{opacity:1;transform:none}}
+@keyframes mp-radar-grow{0%{transform:scale(0.82)}100%{transform:scale(1.22)}}
+@media (prefers-reduced-motion:no-preference){
+@supports (animation-timeline:view()){
+.mp-track{height:1700px;view-timeline-name:--mphero;view-timeline-axis:block}
+.mp-stage{position:sticky;top:0}
+.mp-tagwrap{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:mp-tag-in linear both;animation-timeline:--mphero;animation-range:cover 30% cover 70%}
+.mp-name{animation:mp-name-out linear both;animation-timeline:--mphero;animation-range:cover 30% cover 70%}
+.mp-radar{animation:mp-radar-grow linear both;animation-timeline:--mphero;animation-range:cover 30% cover 70%}
+}
+}
+@media (prefers-reduced-motion:reduce){
+.mp-sweep,.mp-dots circle,.mp-marq{animation:none}
+}
+
+.mp-pill:hover{background:#0F2A36;color:#FFFFFF}
+.mp-row{transition:background 0.2s}
+.mp-row:hover{background:rgba(30,155,215,0.07)}
+.mp-card{transition:background 0.2s}
+.mp-card:hover{background:rgba(30,155,215,0.08)}
+.mp-marq{display:flex;width:max-content;animation:mp-marq 48s linear infinite}
+@keyframes mp-marq{to{transform:translateX(-50%)}}
+</style>
+
+</head>
+<body>
+
+
+
+<div style="position:relative;overflow-x:clip;background:#FFFFFF;color:#0F2A36;font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.6">
+
+<!-- Paper grain -->
+<svg aria-hidden="true" width="100%" height="100%" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;opacity:0.03;mix-blend-mode:multiply;z-index:0" xmlns="http://www.w3.org/2000/svg"><filter id="mp-grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#mp-grain)"/></svg>
+
+<!-- Floating pill nav (sticks while scrolling) -->
+<div style="position:sticky;top:16px;height:0;z-index:20;display:flex;justify-content:flex-end;padding:0 24px;box-sizing:border-box">
+<nav aria-label="Primary" style="display:flex;flex-wrap:wrap;gap:2px;background:rgba(255,255,255,0.82);backdrop-filter:blur(10px);border-radius:999px;padding:6px;box-shadow:0 6px 24px rgba(15,42,54,0.14)">
+<a class="mp-pill" href="#about" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:0 16px;min-height:44px;display:flex;align-items:center;border-radius:999px">About</a>
+<a class="mp-pill" href="#work" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:0 16px;min-height:44px;display:flex;align-items:center;border-radius:999px">Work</a>
+<a class="mp-pill" href="#journey" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:0 16px;min-height:44px;display:flex;align-items:center;border-radius:999px">Journey</a>
+<a class="mp-pill" href="#toolkit" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:0 16px;min-height:44px;display:flex;align-items:center;border-radius:999px">Toolkit</a>
+<a href="#contact" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:0 20px;min-height:44px;display:flex;align-items:center;border-radius:999px;background:#0F2A36;color:#FFFFFF">Contact</a>
+</nav>
+</div>
+
+<!-- HERO -->
+<header style="position:relative;z-index:1">
+<div class="mp-track">
+<div class="mp-stage">
+<p style="position:absolute;left:24px;top:28px;font-family:'Instrument Serif',serif;font-size:30px;line-height:1;z-index:2">MP</p>
+
+<div class="mp-radar">
+<div class="mp-sweep"></div>
+<svg viewBox="0 0 600 600" width="100%" height="100%" aria-hidden="true" style="position:absolute;left:0;top:0">
+<circle cx="300" cy="300" r="290" fill="none" stroke="#0F2A36" stroke-opacity="0.28" stroke-width="1.2"/>
+<circle cx="300" cy="300" r="200" fill="none" stroke="#0F2A36" stroke-opacity="0.2" stroke-width="1"/>
+<circle cx="300" cy="300" r="110" fill="none" stroke="#0F2A36" stroke-opacity="0.2" stroke-width="1"/>
+<line x1="300" y1="10" x2="300" y2="590" stroke="#0F2A36" stroke-opacity="0.16"/>
+<line x1="10" y1="300" x2="590" y2="300" stroke="#0F2A36" stroke-opacity="0.16"/>
+<g class="mp-dots">
+<g class="g1" transform="rotate(20 300 300)"><circle cx="300" cy="120" r="4"/><circle cx="312" cy="196" r="3"/></g>
+<g class="g2" transform="rotate(75 300 300)"><circle cx="300" cy="60" r="4"/><circle cx="296" cy="168" r="3"/><circle cx="304" cy="230" r="3"/></g>
+<g class="g3" transform="rotate(110 300 300)"><circle cx="300" cy="102" r="4"/></g>
+<g class="g4" transform="rotate(160 300 300)"><circle cx="300" cy="40" r="4"/><circle cx="308" cy="150" r="3"/></g>
+<g class="g5" transform="rotate(205 300 300)"><circle cx="300" cy="86" r="4"/><circle cx="294" cy="214" r="3"/></g>
+<g class="g6" transform="rotate(250 300 300)"><circle cx="300" cy="136" r="4"/><circle cx="304" cy="52" r="3"/></g>
+<g class="g7" transform="rotate(300 300 300)"><circle cx="300" cy="70" r="4"/><circle cx="298" cy="190" r="3"/></g>
+<g class="g8" transform="rotate(340 300 300)"><circle cx="300" cy="112" r="4"/></g>
+</g>
+<circle cx="300" cy="300" r="5" fill="#0F2A36"/>
+</svg>
+</div>
+
+<div class="mp-name">
+<h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(76px,14vw,196px);line-height:0.88;letter-spacing:-0.01em;text-transform:uppercase;text-align:center">Meeta<br>Patil</h1>
+</div>
+
+<div class="mp-tagwrap">
+<div class="mp-tag">
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D;display:none">Hello</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,8vw,104px);line-height:1;letter-spacing:-0.01em">Software that talks to <em>hardware.</em></h2>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">Electronics &amp; Computer Engineering · Mumbai</p>
+</div>
+</div>
+
+<p style="position:absolute;left:24px;bottom:28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;display:flex;align-items:center;gap:10px;z-index:2">
+<svg width="16" height="22" viewBox="0 0 16 22" aria-hidden="true" fill="none" stroke="#0F2A36" stroke-width="1.4"><path d="M8 1v19M2 14l6 6 6-6"/></svg>
+Scroll
+</p>
+</div>
+</div>
+</header>
+
+<main style="position:relative;z-index:1">
+
+<!-- 01 INTRODUCTION -->
+<section id="about" style="max-width:1200px;margin:0 auto;padding:96px 24px 72px;display:flex;flex-wrap:wrap;gap:40px 72px">
+<div style="flex:1 1 300px;max-width:380px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">01 / Introduction</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:56px;line-height:1;letter-spacing:-0.01em">Building things that sense, compute <em>&amp;</em> show.</h2>
+<div style="width:100%;height:1.5px;background:#0F2A36"></div>
+<p style="font-family:'Instrument Serif',serif;font-size:32px;line-height:1.1;color:#5D7A86">Web apps, sensors, a little CAD.</p>
+</div>
+<div style="flex:2 1 460px;min-width:0;display:flex;flex-direction:column;gap:28px">
+<p style="font-family:'Instrument Serif',serif;font-size:42px;line-height:1.18;letter-spacing:-0.005em">I am a B.Tech student in <em>Electronics &amp; Computer Engineering</em> at KJ Somaiya, with Honours in Data Science. I build full-stack web apps and the <em>sensor-driven hardware</em> that feeds them.</p>
+<div style="height:1px;background:#BBD4DE"></div>
+<p style="font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;letter-spacing:0.08em;text-transform:uppercase;color:#46626D;max-width:44em">React, Flask and MongoDB on the software side. Arduino, ESP32, ESP8266 and LiDAR on the hardware side. Five internships since December 2024 across web development, IoT, embedded systems and startup analysis. Graduating 2028.</p>
+</div>
+</section>
+
+<!-- 02 SELECTED WORK -->
+<section id="work" style="max-width:1200px;margin:0 auto;padding:56px 24px 72px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">02 / Selected work</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:72px;line-height:1;letter-spacing:-0.01em">Creating with <em>code &amp; copper.</em></h2>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:stretch">
+
+<article class="mp-card" style="flex:3 1 520px;min-width:0;border:1.5px solid #0F2A36;padding:36px;display:flex;flex-direction:column;gap:20px;justify-content:space-between;min-height:520px;box-sizing:border-box;background-image:linear-gradient(rgba(15,42,54,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,42,54,0.07) 1px,transparent 1px);background-size:40px 40px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#46626D">Sep – Dec 2025</p>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#46626D">Patent-backed</p>
+</div>
+<svg viewBox="0 0 400 140" width="100%" height="140" aria-hidden="true" style="max-width:520px">
+<path d="M0 120 L40 120 L52 96 L84 96 L96 120 L140 120 L152 70 L196 70 L208 120 L260 120 L272 104 L320 104 L332 120 L400 120" fill="none" stroke="#0F2A36" stroke-width="1.6"/>
+<g fill="#1E9BD7"><circle cx="46" cy="110" r="3"/><circle cx="90" cy="108" r="3"/><circle cx="146" cy="95" r="3"/><circle cx="174" cy="60" r="3"/><circle cx="202" cy="95" r="3"/><circle cx="266" cy="112" r="3"/><circle cx="296" cy="96" r="3"/><circle cx="326" cy="112" r="3"/></g>
+<path d="M174 20 L146 95 M174 20 L202 95 M174 20 L174 60" stroke="#1E9BD7" stroke-opacity="0.5" stroke-width="1"/>
+<rect x="166" y="8" width="16" height="12" fill="#0F2A36"/>
+</svg>
+<div style="display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:44px;line-height:1.05">Autonomous Vehicle <em>with LiDAR</em></h3>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D;line-height:1.8">Arduino Uno · LiDAR · NVIDIA Jetson Nano · Ubuntu · 3D printing</p>
+<p style="font-size:16px;max-width:38em;color:#1F3C48">A prototype built on LiDAR sensing, embedded systems and real-time obstacle detection, part of an initiative linked to 5 UK design patents acknowledged by the UK Intellectual Property Office. I integrated an Arduino Uno with the LiDAR sensors and designed 3D-printed sensor mounts that improved stability and sensing accuracy.</p>
+</div>
+</article>
+
+<div style="flex:2 1 340px;min-width:0;display:flex;flex-direction:column;gap:20px">
+
+<article class="mp-card" style="flex:1;border:1.5px solid #0F2A36;padding:28px;display:flex;flex-direction:column;gap:12px;background-image:linear-gradient(rgba(15,42,54,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,42,54,0.07) 1px,transparent 1px);background-size:40px 40px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.05">Somaiya Course <em>Portal</em></h3>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D">SwDC · 2026</p>
+</div>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D;line-height:1.8">React.js · JavaScript · MongoDB · JWT</p>
+<p style="font-size:15px;color:#1F3C48">Frontend features and backend integration for the college's course management portal: a Student Dashboard, Study Planner and Discussion Forums, backed by REST APIs with JWT authentication.</p>
+</article>
+
+<article class="mp-card" style="flex:1;border:1.5px solid #0F2A36;padding:28px;display:flex;flex-direction:column;gap:12px;background-image:linear-gradient(rgba(15,42,54,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,42,54,0.07) 1px,transparent 1px);background-size:40px 40px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.05">ESP8266 Sensor <em>Dashboard</em></h3>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D">Sani · 2025</p>
+</div>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D;line-height:1.8">ESP8266 · Python · Flask · HTML</p>
+<p style="font-size:15px;color:#1F3C48">An IoT prototype for real-time data acquisition and communication, with Python sensor logging and a Flask web dashboard for visualizing the readings.</p>
+</article>
+
+<article class="mp-card" style="flex:1;border:1.5px solid #0F2A36;padding:28px;display:flex;flex-direction:column;gap:12px;background-image:linear-gradient(rgba(15,42,54,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,42,54,0.07) 1px,transparent 1px);background-size:40px 40px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.05">Vision &amp; <em>Forecasting</em></h3>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D">KJSCE · 2026</p>
+</div>
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#46626D;line-height:1.8">Arduino · ESP32 · OpenCV · Python</p>
+<p style="font-size:15px;color:#1F3C48">Arduino and ESP32 systems, computer vision with OpenCV, dataset preparation, and analysis of real-world data and forecasting problems, plus CAD and 3D printing workflows.</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- 03 JOURNEY -->
+<section id="journey" style="max-width:1200px;margin:0 auto;padding:56px 24px 72px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">03 / Journey</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:72px;line-height:1;letter-spacing:-0.01em">Professional <em>journey.</em></h2>
+</div>
+
+<div style="display:flex;flex-direction:column;border-top:1.5px solid #0F2A36">
+
+<article class="mp-row" style="display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 12px;border-bottom:1px solid #BBD4DE">
+<div style="flex:0 0 220px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">Jun – Aug 2026</p>
+<p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;border:1px solid #0F2A36;border-radius:999px;padding:4px 12px">Remote</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.05">Web Developer Intern</h3>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#46626D">Software Development Cell (SwDC), KJSSE · Mumbai</p>
+<ul style="display:flex;flex-direction:column;gap:8px;max-width:46em;font-size:16px;color:#1F3C48">
+<li>Built frontend features and integrated backend functionality for the Somaiya Course Management Portal using React.js, JavaScript and MongoDB.</li>
+<li>Implemented a Student Dashboard, Study Planner and Discussion Forums to improve the student experience.</li>
+<li>Developed REST APIs with JWT authentication and drove UI/UX improvements for robust application performance.</li>
+</ul>
+</div>
+</article>
+
+<article class="mp-row" style="display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 12px;border-bottom:1px solid #BBD4DE">
+<div style="flex:0 0 220px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">May – Jun 2026</p>
+<p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;border:1px solid #0F2A36;border-radius:999px;padding:4px 12px">On-site</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.05">Summer Intern</h3>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#46626D">KJ Somaiya College of Engineering · Vidyavihar, Mumbai</p>
+<ul style="display:flex;flex-direction:column;gap:8px;max-width:46em;font-size:16px;color:#1F3C48">
+<li>Built Arduino and ESP32-based systems while exploring computer vision (OpenCV) and dataset preparation, using Python, embedded systems and machine learning.</li>
+<li>Used CAD design and 3D printing workflows to improve project outcomes.</li>
+<li>Applied analytical techniques to real-world data and forecasting problems, improving project efficiency.</li>
+</ul>
+</div>
+</article>
+
+<article class="mp-row" style="display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 12px;border-bottom:1px solid #BBD4DE">
+<div style="flex:0 0 220px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">Dec 2025 – Jan 2026</p>
+<p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;border:1px solid #0F2A36;border-radius:999px;padding:4px 12px">Hybrid</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.05">Software &amp; IoT Development Intern</h3>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#46626D">Sani Electronics · Mumbai</p>
+<ul style="display:flex;flex-direction:column;gap:8px;max-width:46em;font-size:16px;color:#1F3C48">
+<li>Developed an IoT prototype on ESP8266 for real-time data acquisition and communication.</li>
+<li>Built Python-based data processing and sensor logging to improve data accuracy.</li>
+<li>Created a web dashboard with HTML and Flask for data visualization; contributed to testing and early client engagement.</li>
+</ul>
+</div>
+</article>
+
+<article class="mp-row" style="display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 12px;border-bottom:1px solid #BBD4DE">
+<div style="flex:0 0 220px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">Sep – Dec 2025</p>
+<p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;border:1px solid #0F2A36;border-radius:999px;padding:4px 12px">On-site</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.05">Project Intern</h3>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#46626D">KJ Somaiya College of Engineering · Vidyavihar, Mumbai</p>
+<ul style="display:flex;flex-direction:column;gap:8px;max-width:46em;font-size:16px;color:#1F3C48">
+<li>Contributed to autonomous vehicle sensor systems: wiring, hardware integration and assembly of prototype components.</li>
+<li>Designed custom 3D-printed component holders, improving prototype efficiency.</li>
+<li>Collaborated with faculty and peers, contributing to UK-registered design patents.</li>
+</ul>
+</div>
+</article>
+
+<article class="mp-row" style="display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 12px;border-bottom:1.5px solid #0F2A36">
+<div style="flex:0 0 220px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+<p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">Dec 2024 – Feb 2025</p>
+<p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;border:1px solid #0F2A36;border-radius:999px;padding:4px 12px">On-site</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.05">Startup Analyst Intern</h3>
+<p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#46626D">Bioriidl · Mumbai</p>
+<ul style="display:flex;flex-direction:column;gap:8px;max-width:46em;font-size:16px;color:#1F3C48">
+<li>Conducted startup, business and financial analysis to support research and strategic decision-making.</li>
+<li>Evaluated business models, market opportunities and growth potential across emerging startups.</li>
+</ul>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- 04 MILESTONES -->
+<section id="milestones" style="max-width:1200px;margin:0 auto;padding:56px 24px 72px;display:flex;flex-wrap:wrap;gap:40px 72px">
+<div style="flex:1 1 300px;max-width:380px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">04 / Milestones</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:64px;line-height:1;letter-spacing:-0.01em">Moments that <em>mattered.</em></h2>
+</div>
+<ul style="flex:2 1 460px;min-width:0;display:flex;flex-direction:column">
+<li style="display:flex;gap:20px;padding:24px 0;border-top:1.5px solid #0F2A36">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 22px;margin-top:6px"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#1E9BD7"/></svg>
+<p style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1.2">Contributed to an initiative linked to 5 UK design patents acknowledged by the UK Intellectual Property Office.</p>
+</li>
+<li style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #BBD4DE">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 22px;margin-top:6px"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#1E9BD7"/></svg>
+<p style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1.2">Built a student dashboard, study planner and discussion forums on a JWT-secured React and MongoDB stack.</p>
+</li>
+<li style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #BBD4DE">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 22px;margin-top:6px"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#1E9BD7"/></svg>
+<p style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1.2">Took an ESP8266 IoT prototype from sensor to web dashboard, and joined early client engagement.</p>
+</li>
+<li style="display:flex;gap:20px;padding:24px 0;border-top:1px solid #BBD4DE;border-bottom:1.5px solid #0F2A36">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 22px;margin-top:6px"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#1E9BD7"/></svg>
+<p style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1.2">Five internships since December 2024, spanning web, IoT, embedded systems and startup analysis.</p>
+</li>
+</ul>
+</section>
+
+<!-- 05 TOOLKIT -->
+<section id="toolkit" style="padding:56px 0 72px;display:flex;flex-direction:column;gap:40px">
+<div style="max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">05 / Toolkit</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:72px;line-height:1;letter-spacing:-0.01em">Tools of <em>the trade.</em></h2>
+</div>
+
+<div aria-hidden="true" style="overflow:hidden;border-top:1.5px solid #0F2A36;border-bottom:1.5px solid #0F2A36;padding:22px 0;background:#E3F3FB;color:#0F2A36">
+<div class="mp-marq">
+<div style="display:flex;flex:0 0 auto;gap:40px;padding-right:40px;font-family:'Instrument Serif',serif;font-size:44px;line-height:1;white-space:nowrap"><span>Python</span><span><em>React.js</em></span><span>Flask</span><span><em>MongoDB</em></span><span>Arduino</span><span><em>ESP32</em></span><span>OpenCV</span><span><em>LiDAR</em></span><span>Jetson Nano</span><span><em>Figma</em></span><span>AutoCAD</span><span><em>Git</em></span></div>
+<div style="display:flex;flex:0 0 auto;gap:40px;padding-right:40px;font-family:'Instrument Serif',serif;font-size:44px;line-height:1;white-space:nowrap"><span>Python</span><span><em>React.js</em></span><span>Flask</span><span><em>MongoDB</em></span><span>Arduino</span><span><em>ESP32</em></span><span>OpenCV</span><span><em>LiDAR</em></span><span>Jetson Nano</span><span><em>Figma</em></span><span>AutoCAD</span><span><em>Git</em></span></div>
+</div>
+</div>
+
+<div style="max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:36px 48px">
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Languages</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">Python, Java, C, JavaScript, HTML</p>
+</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Frameworks &amp; libraries</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">React.js, Flask, OpenCV, Flutter, Tkinter</p>
+</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Backend &amp; databases</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">REST APIs, JWT authentication, MongoDB</p>
+</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Embedded &amp; hardware</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">Arduino, ESP32, ESP8266, NVIDIA Jetson Nano, LiDAR, sensor integration</p>
+</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Tools</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">Git, GitHub, VS Code, AutoCAD, CAD &amp; 3D printing, Figma, Webflow, WordPress, R Studio</p>
+</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:1.5px solid #0F2A36;padding-top:16px">
+<h3 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#46626D;font-weight:500">Core skills</h3>
+<p style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.3">Object-oriented programming, data structures &amp; algorithms, full-stack development, data science, business &amp; financial analysis</p>
+</div>
+</div>
+</section>
+
+<!-- 06 EDUCATION -->
+<section id="education" style="max-width:1200px;margin:0 auto;padding:56px 24px 72px;display:flex;flex-wrap:wrap;gap:40px 72px">
+<div style="flex:1 1 300px;max-width:380px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">06 / Education</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:64px;line-height:1;letter-spacing:-0.01em">Where I <em>learn.</em></h2>
+</div>
+<div style="flex:2 1 460px;min-width:0;display:flex;flex-direction:column">
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1.5px solid #0F2A36">
+<p style="flex:0 0 190px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">2024 – 2028 (expected)</p>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:4px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.1">KJ Somaiya School of Engineering, Mumbai</h3>
+<p style="font-size:16px;color:#1F3C48">B.Tech in Electronics &amp; Computer Engineering, Honours in Data Science</p>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #BBD4DE">
+<p style="flex:0 0 190px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">2022 – 2024</p>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:4px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.1">Rahul International School, Mumbai</h3>
+<p style="font-size:16px;color:#1F3C48">Higher Secondary Education</p>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #BBD4DE;border-bottom:1.5px solid #0F2A36">
+<p style="flex:0 0 190px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.08em">2021 – 2022</p>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:4px">
+<h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.1">Kanakia International School, Mumbai</h3>
+<p style="font-size:16px;color:#1F3C48">Secondary Education</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- CONTACT -->
+<footer id="contact" style="position:relative;z-index:1;background:#EAF6FC;color:#0F2A36;border-top:1.5px solid #0F2A36">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px 40px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#46626D">07 / Contact</p>
+<h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(64px,11vw,160px);line-height:0.95;letter-spacing:-0.015em">let's build <em>something.</em></h2>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="mailto:meetapatil009@gmail.com" style="background:#0F2A36;color:#FFFFFF;text-decoration:none;font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.02em;text-transform:none;padding:0 28px;min-height:52px;display:flex;align-items:center;border-radius:999px">meetapatil009@gmail.com</a>
+<a href="https://github.com/MeetaPatil" style="border:1.5px solid #0F2A36;color:#0F2A36;text-decoration:none;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:0 28px;min-height:52px;display:flex;align-items:center;border-radius:999px">GitHub</a>
+<a href="https://www.linkedin.com/in/meeta-patil" style="border:1.5px solid #0F2A36;color:#0F2A36;text-decoration:none;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:0 28px;min-height:52px;display:flex;align-items:center;border-radius:999px">LinkedIn</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid #BBD4DE;padding-top:24px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#46626D">
+<p>Meeta Patil</p>
+<p>Mumbai, Maharashtra, India</p>
+</div>
+</div>
+</footer>
+
+</div>
+
+</body>
+</html>
